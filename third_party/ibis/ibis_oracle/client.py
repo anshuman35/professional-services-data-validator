@@ -73,9 +73,12 @@ def sa_oracle_VARCHAR(_, satype, nullable=True):
 def sa_oracle_VARCHAR2(_, satype, nullable=True):
     return dt.String(nullable=nullable)
 
+
 @dt.dtype.register(OracleDialect_cx_oracle, sa.dialects.oracle.TIMESTAMP)
-def sa_oracle_TIMESTAMP(_, satype, nullable=True):
-    return dt.Timestamp(nullable=nullable)
+def sa_oracle_TIMESTAMP(_, satype, nullable=True, default_timezone='UTC'):
+    timezone = default_timezone if satype.timezone else None
+    return dt.Timestamp(timezone=timezone, nullable=nullable)
+
 
 class OracleTable(alch.AlchemyTable):
     pass
@@ -244,7 +247,7 @@ class OracleClient(alch.AlchemyClient):
 
     def get_schema(self, name, schema=None):
         return self.table(name, schema=schema).schema()
-    
+
     def sql(self, query):
         """
         Convert a Oracle query to an Ibis table expression
@@ -283,5 +286,5 @@ class OracleClient(alch.AlchemyClient):
                 else:
                     ibis_datatype = type_map[row[1].name]
                 ibis_types.append(ibis_datatype)
-                
+
         return sch.Schema(names, ibis_types)
