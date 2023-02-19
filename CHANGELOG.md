@@ -2,6 +2,29 @@
 
 ## Untagged
 
+## [3.0.0](https://github.com/GoogleCloudPlatform/professional-services-data-validator/compare/v2.9.0...v3.0.0) (2023-02-19)
+
+
+### ⚠ BREAKING CHANGES
+
+* issue673 optimize CLI tools arg parser ([#701](https://github.com/GoogleCloudPlatform/professional-services-data-validator/issues/701))
+
+### Features
+
+* ibis_bigquery strftime support for DATETIME columns ([#737](https://github.com/GoogleCloudPlatform/professional-services-data-validator/issues/737)) ([b1141de](https://github.com/GoogleCloudPlatform/professional-services-data-validator/commit/b1141de481216f2adfe4cabbf3cb69efac1d5c89))
+
+
+### Bug Fixes
+
+* Add support for numeric and precision with length and precision in Postgres Custom Query ([#723](https://github.com/GoogleCloudPlatform/professional-services-data-validator/issues/723)) ([742b77e](https://github.com/GoogleCloudPlatform/professional-services-data-validator/commit/742b77ef18741e9eee52d71f954b1400395fe5c8))
+* Cater for query driven comparisons in date format override code ([#733](https://github.com/GoogleCloudPlatform/professional-services-data-validator/issues/733)) ([0a22643](https://github.com/GoogleCloudPlatform/professional-services-data-validator/commit/0a226436605de93af36894cf6497f9d7dcb337c0))
+* issue673 optimize CLI tools arg parser ([#701](https://github.com/GoogleCloudPlatform/professional-services-data-validator/issues/701)) ([26bb8e9](https://github.com/GoogleCloudPlatform/professional-services-data-validator/commit/26bb8e9f9a5301361f632a9eb1dd13aaf67628e0))
+
+
+### Documentation
+
+* formatting fixes and fix broken link ([#739](https://github.com/GoogleCloudPlatform/professional-services-data-validator/issues/739)) ([7306dfc](https://github.com/GoogleCloudPlatform/professional-services-data-validator/commit/7306dfc95f3f3816703a5f31da7bc2e8f0ec21da))
+
 ## [2.9.0](https://github.com/GoogleCloudPlatform/professional-services-data-validator/compare/v2.8.0...v2.9.0) (2023-02-16)
 
 
